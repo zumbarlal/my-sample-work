@@ -7,21 +7,27 @@ import {
   NavigationContainer,
 } from "@react-navigation/native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import { PaperProvider } from "react-native-paper";
+import { MD3LightTheme, PaperProvider } from "react-native-paper";
+import { enableScreens } from "react-native-screens";
+enableScreens();
+
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
     <SafeAreaProvider>
-      <PaperProvider>
+      <PaperProvider theme={MD3LightTheme}>
         <NavigationContainer>
-          <Stack.Navigator initialRouteName="Login">
+          <Stack.Navigator
+            initialRouteName="Login"
+            screenOptions={{
+              headerShown: false,
+            }}
+          >
             <Stack.Screen
               name="Login"
+              options={{ title: "Zumbarla's Sample Work" }}
               component={LoginScreen}
-              options={{
-                title: `Zumbarlal's Portfolio. (This app is built with React Native bare workflow, Its works on Android, iOS and Web)`,
-              }}
             />
             <Stack.Screen name="Dashboard" component={DashboardScreen} />
           </Stack.Navigator>

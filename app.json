@@ -2,6 +2,9 @@
   "expo": {
     "name": "my_work",
     "slug": "my_work",
-    "version": "1.0.0"
+    "version": "1.0.0",
+    "plugins": [
+      "expo-asset"
+    ]
   }
 }
